@@ -1,5 +1,6 @@
 from collections import OrderedDict
 from django.utils.six import text_type
+from django.utils.translation import ugettext_lazy as _
 from django.utils.text import slugify
 from unidecode import unidecode
 from wagtail.wagtailforms import models

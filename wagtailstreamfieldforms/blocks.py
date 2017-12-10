@@ -3,15 +3,6 @@ from django import forms
 from wagtail.wagtailcore import blocks
 
 
-class FormFieldBoundBlock(blocks.BoundBlock):
-    def get_form_field(self, *args, **kwargs):
-        # Alias for block.get_form_field
-        return self.block.get_form_field(*args, **kwargs)
-
-    def get_options_for_field(self):
-        return self.block.get_options_for_field(self.value)
-
-
 class FormFieldBlock(blocks.StructBlock):
     label = blocks.CharBlock(required=True)
     help_text = blocks.CharBlock(required=False)
