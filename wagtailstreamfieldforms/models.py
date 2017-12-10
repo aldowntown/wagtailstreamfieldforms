@@ -32,7 +32,7 @@ class StreamFieldFormMixin:
 
     def get_data_fields(self):
         data_fields = [
-            ('created_at', _('Submission Date')),
+            ('submit_time', _('Submission Date')),
         ]
         data_fields += [
             (clean_name(field.value['label']), field.value['label'])
