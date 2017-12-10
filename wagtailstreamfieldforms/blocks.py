@@ -13,9 +13,6 @@ class FormFieldBlock(blocks.StructBlock):
     def get_options_for_field(self, options):
         return options
 
-    def bind(self, *args, **kwargs):
-        return FormFieldBoundBlock(self, *args, **kwargs)
-
 
 class SingleLineFieldBlock(FormFieldBlock):
     def get_form_field(self, options={}):
