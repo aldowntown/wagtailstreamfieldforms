@@ -1,28 +1,26 @@
 #!/usr/bin/env python
 
-from wagtailsurveys import __version__
-
 try:
     from setuptools import setup, find_packages
 except ImportError:
     from distutils.core import setup
 
-
 # Testing dependencies
-testing_extras = [
-]
+testing_extras = []
 
 setup(
     name='wagtailstreamfieldforms',
-    version=__version__,
-    description='A module for Wagtail that provides functionality of polls and surveys.',
+    version='0.1.0',
+    description=
+    'A module for Wagtail that provides functionality of polls and surveys.',
     author='Hannes Lohmander',
     author_email='hannes@aldowntown.com',
     url='https://github.com/aldowntown/wagtailstreamfieldforms',
     packages=find_packages(),
     include_package_data=True,
     license='BSD',
-    long_description='See https://github.com/torchbox/wagtailsurveys for details',
+    long_description=
+    'See https://github.com/torchbox/wagtailsurveys for details',
     classifiers=[
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
@@ -48,5 +46,4 @@ setup(
     extras_require={
         'testing': testing_extras,
     },
-    zip_safe=False,
-)
+    zip_safe=False, )
