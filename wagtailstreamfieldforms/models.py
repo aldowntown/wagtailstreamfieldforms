@@ -51,6 +51,6 @@ class AbstractForm(StreamFieldFormMixin, models.AbstractForm):
         abstract = True
 
 
-class AbstractEmailForm(models.AbstractEmailForm, StreamFieldFormMixin):
+class AbstractEmailForm(StreamFieldFormMixin, models.AbstractEmailForm):
     class Meta:
         abstract = True
