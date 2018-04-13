@@ -14,7 +14,19 @@ class FormFieldBlock(blocks.StructBlock):
         return options
 
 
-class SingleLineFieldBlock(FormFieldBlock):
+class TextFieldBlock(FormFieldBlock):
+    mandatory = blocks.BooleanBlock(
+        required=False,
+        default=True,
+        help_text="Whether or not this field has to be entered in order to submit the survey.")
+    
+    def get_options_for_field(self, options):
+        options['required'] = options['mandatory']
+        del options['mandatory']
+        return options
+
+
+class SingleLineFieldBlock(TextFieldBlock):
     def get_form_field(self, options={}):
         return forms.CharField(**options)
 
@@ -22,7 +34,7 @@ class SingleLineFieldBlock(FormFieldBlock):
         icon = 'italic'
 
 
-class MultiLineFieldBlock(FormFieldBlock):
+class MultiLineFieldBlock(TextFieldBlock):
     def get_form_field(self, options={}):
         return forms.CharField(widget=forms.Textarea, **options)
 
